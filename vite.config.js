@@ -11,7 +11,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'logo.png'],
       manifest: {
-        name: 'CashLink - African Community Platform',
+        name: 'CashLinkS',
         short_name: 'CashLink',
         description: 'Connecting Africans in UAE with trusted money agents, businesses, jobs, and community services',
         theme_color: '#10b981',
@@ -80,8 +80,87 @@ export default defineConfig({
             purpose: 'maskable'
           }
         ],
-        // Screenshots removed - add them later when you have actual screenshots
-        // screenshots: [],
+        screenshots: [
+          // Mobile screenshots (portrait) - narrow form factor
+          {
+            src: '/screenshots/mobile- (1).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Welcome Screen'
+          },
+          {
+            src: '/screenshots/mobile- (2).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'GetCash Service'
+          },
+          {
+            src: '/screenshots/mobile- (3).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Jobs Listing'
+          },
+          {
+            src: '/screenshots/mobile- (4).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Marketplace'
+          },
+          {
+            src: '/screenshots/mobile- (5).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Events'
+          },
+          {
+            src: '/screenshots/mobile- (6).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Business Directory'
+          },
+          {
+            src: '/screenshots/mobile- (7).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Community Services'
+          },
+          {
+            src: '/screenshots/mobile- (8).jpeg',
+            sizes: '540x960',
+            type: 'image/jpeg',
+            form_factor: 'narrow',
+            label: 'Profile'
+          },
+          // Desktop screenshots (landscape) - wide form factor
+          {
+            src: '/screenshots/desktop.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Home Dashboard'
+          },
+          {
+            src: '/screenshots/desktop2.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Business Directory'
+          },
+          {
+            src: '/screenshots/desktop3.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Community Services'
+          }
+        ],
         categories: ['business', 'social', 'lifestyle'],
         shortcuts: [
           {

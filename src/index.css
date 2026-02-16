@@ -56,9 +56,21 @@
   * {
     @apply border-border;
   }
-  body {
+  html, body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
   }
 }
 
