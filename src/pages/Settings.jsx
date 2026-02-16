@@ -131,7 +131,9 @@ export default function Settings() {
               <CardTitle className="flex items-center gap-2">
                 <Globe className="w-5 h-5" />
                 Language & Region
-              </CardHeader>
+              </CardTitle>
+              <CardDescription>Manage your language preferences</CardDescription>
+            </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 <Label>Preferred Language</Label>
