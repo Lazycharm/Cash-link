@@ -71,6 +71,9 @@ const AdminAppSettings = lazy(() => import('@/pages/AdminAppSettings'));
 // Legal pages
 const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy'));
 const Agreements = lazy(() => import('@/pages/Agreements'));
+const DeleteAccount = lazy(() => import('@/pages/DeleteAccount'));
+const EditProfile = lazy(() => import('@/pages/EditProfile'));
+const Settings = lazy(() => import('@/pages/Settings'));
 
 // Loading component
 function PageLoader() {
@@ -127,6 +130,7 @@ export default function App() {
         <Route path="/complete-signup" element={<CompleteSignup />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/agreements" element={<Agreements />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
 
         {/* Main layout routes */}
         <Route element={<Layout />}>
@@ -137,6 +141,12 @@ export default function App() {
           {/* Profile */}
           <Route path="/profile" element={
             <ProtectedRoute><Profile /></ProtectedRoute>
+          } />
+          <Route path="/profile/edit" element={
+            <ProtectedRoute><EditProfile /></ProtectedRoute>
+          } />
+          <Route path="/profile/settings" element={
+            <ProtectedRoute><Settings /></ProtectedRoute>
           } />
           <Route path="/notifications" element={
             <ProtectedRoute><Notifications /></ProtectedRoute>

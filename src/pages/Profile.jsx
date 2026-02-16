@@ -327,11 +327,11 @@ export default function Profile() {
 
         <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <CardContent className="p-4 space-y-2">
-            <ProfileMenuItem icon={UserIcon} text="Edit Personal Info" href={createPageUrl("CompleteSignup")} />
+            <ProfileMenuItem icon={UserIcon} text="Edit Personal Info" href="/profile/edit" />
             {user.app_role !== 'customer' && (
               <ProfileMenuItem icon={BadgeCheck} text="Manage Subscription" href={createPageUrl("Subscribe")} />
             )}
-            <ProfileMenuItem icon={Settings} text="Settings" href="#" />
+            <ProfileMenuItem icon={Settings} text="Settings" href="/profile/settings" />
             <ProfileMenuItem icon={Bell} text="Notifications" href={createPageUrl("Notifications")} badgeCount={0} />
           </CardContent>
         </Card>

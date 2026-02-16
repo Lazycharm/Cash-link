@@ -170,5 +170,44 @@ export const User = {
     const { data: { session }, error } = await supabase.auth.getSession();
     if (error) throw error;
     return session;
+  },
+
+  /**
+   * Delete the current user's account
+   * This will delete the user from auth.users, which will cascade delete the profile
+   */
+  async deleteAccount() {
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    
+    if (authError || !user) {
+      throw new Error('Not authenticated');
+    }
+
+    // Get the session token for authentication
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      throw new Error('No active session');
+    }
+
+    // Delete user account using Supabase Edge Function
+    // The edge function uses admin privileges to delete the user
+    const { data, error } = await supabase.functions.invoke('delete-user-account', {
+      body: { userId: user.id },
+      headers: {
+        Authorization: `Bearer ${session.access_token}`
+      }
+    });
+
+    if (error) {
+      console.error('Error calling delete function:', error);
+      throw new Error(error.message || 'Failed to delete account. Please contact support.');
+    }
+
+    if (data?.error) {
+      throw new Error(data.error);
+    }
+
+    // Sign out after successful deletion
+    await supabase.auth.signOut();
   }
 };
