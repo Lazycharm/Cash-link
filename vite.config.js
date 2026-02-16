@@ -11,7 +11,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'logo.png'],
       manifest: {
-        name: 'CashLinkS',
+        name: 'CashLink',
         short_name: 'CashLink',
         description: 'Connecting Africans in UAE with trusted money agents, businesses, jobs, and community services',
         theme_color: '#10b981',
