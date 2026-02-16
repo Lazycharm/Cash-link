@@ -58,12 +58,8 @@ export default defineConfig({
             type: 'image/png',
             purpose: 'any'
           },
-          {
-            src: '/icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png',
-            purpose: 'any'
-          },
+          // Note: 384x384 is optional, removed to avoid size mismatch
+          // Only 192x192 and 512x512 are required
           {
             src: '/icons/icon-512x512.png',
             sizes: '512x512',
