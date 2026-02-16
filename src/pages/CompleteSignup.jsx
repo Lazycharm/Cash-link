@@ -136,7 +136,7 @@ export default function CompleteSignup() {
 
       // ALL users go to Home after signup
       // Professional role users will see a banner about pending role approval
-      window.location.href = createPageUrl("Home");
+      navigate(createPageUrl("Home"), { replace: true });
 
     } catch (error) {
       console.error("Signup error:", error);

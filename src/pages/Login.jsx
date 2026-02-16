@@ -41,7 +41,7 @@ export default function Login() {
     setError(null);
 
     try {
-      const redirectUrl = `${window.location.origin}/`;
+      const redirectUrl = `${window.location.origin}/complete-signup`;
       await signInWithGoogle(redirectUrl);
     } catch (error) {
       console.error("Google login failed:", error);
