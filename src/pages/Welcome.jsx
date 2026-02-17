@@ -534,38 +534,40 @@ export default function Welcome() {
 
         {/* Final CTA */}
         <div className="mb-16 px-4">
-          <div className="text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 rounded-3xl p-10 md:p-16 text-white relative overflow-hidden shadow-2xl max-w-5xl mx-auto">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
+          <div className="text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl max-w-5xl mx-auto">
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <div className="absolute inset-0 w-full h-full" style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20H0v-2h20zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h14v2H20v-2zm0-4h14v2H20v-2zm0 8h14v2H20v-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundSize: '40px 40px',
+                backgroundRepeat: 'repeat'
               }}></div>
             </div>
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-xl md:text-2xl mb-8 text-green-50">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-2">Ready to Get Started?</h3>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-green-50 px-2">
                 Join 10,000+ Africans already using CashLink
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <Link to="/signup">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4 sm:mb-6 px-2">
+                <Link to="/signup" className="w-full sm:w-auto">
                   <Button 
-                    className="bg-white text-green-600 hover:bg-gray-100 px-10 py-6 rounded-2xl text-lg md:text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-200"
+                    className="w-full sm:w-auto bg-white text-green-600 hover:bg-gray-100 px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-200"
                   >
                     Create Free Account
-                    <ArrowRight className="ml-2 w-6 h-6" />
+                    <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
                   </Button>
                 </Link>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-4 text-green-100 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4" />
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-green-100 text-xs sm:text-sm px-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Free to join</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>No credit card</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Verified community</span>
                 </div>
               </div>

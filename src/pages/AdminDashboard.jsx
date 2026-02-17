@@ -24,7 +24,8 @@ import {
   Clock,
   UserCheck,
   AlertCircle,
-  HelpCircle
+  HelpCircle,
+  Heart
 } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 
@@ -202,6 +203,7 @@ export default function AdminDashboard() {
     { icon: BadgeCheck, title: "Subscription Requests", description: "Approve and manage user subscription payments.", href: createPageUrl("AdminSubscriptionManagement"), color: "bg-green-500" },
     { icon: Megaphone, title: "Promotion Requests", description: "Manage promotional campaigns and user promotions.", href: createPageUrl("AdminPromotions"), color: "bg-rose-500" },
     { icon: Briefcase, title: "Content Management", description: "Moderate jobs, events, and marketplace postings.", href: createPageUrl("AdminContentManagement"), color: "bg-amber-500" },
+    { icon: Heart, title: "Donations Management", description: "Approve donation campaigns and manage contributions.", href: createPageUrl("AdminDonationsManagement"), color: "bg-pink-500" },
     { icon: FileText, title: "Site Content", description: "Edit content for About Us, Privacy Policy, and Agreements pages.", href: createPageUrl("AdminSiteContent"), color: "bg-teal-500" },
     { icon: HelpCircle, title: "UAE Help Center", description: "Manage tools, links, and directory locations for the help center.", href: createPageUrl("AdminUAEHelpCenter"), color: "bg-indigo-500" },
     { icon: Settings, title: "App Settings", description: "Control subscription prices, promotions, and admin contact info.", href: createPageUrl("AdminAppSettings"), color: "bg-gray-600" }

@@ -39,6 +39,7 @@ const SellItem = lazy(() => import('@/pages/Sellitem'));
 // Community pages
 const Community = lazy(() => import('@/pages/Community'));
 const Donations = lazy(() => import('@/pages/Donations'));
+const CreateDonation = lazy(() => import('@/pages/CreateDonation'));
 const LostAndFound = lazy(() => import('@/pages/LostAndFound'));
 const ReportLostItem = lazy(() => import('@/pages/ReportLostItem'));
 const EmergencyServices = lazy(() => import('@/pages/EmergencyServices'));
@@ -62,6 +63,7 @@ const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
 const AdminUserManagement = lazy(() => import('@/pages/AdminUserManagement'));
 const AdminBusinessManagement = lazy(() => import('@/pages/AdminBusinessManagement'));
 const AdminContentManagement = lazy(() => import('@/pages/AdminContentManagement'));
+const AdminDonationsManagement = lazy(() => import('@/pages/AdminDonationsManagement'));
 const AdminPromotions = lazy(() => import('@/pages/AdminPromotions'));
 const AdminSubscriptionManagement = lazy(() => import('@/pages/AdminSubscriptionManagement'));
 const AdminSiteContent = lazy(() => import('@/pages/AdminSiteContent'));
@@ -189,6 +191,9 @@ export default function App() {
           {/* Community */}
           <Route path="/community" element={<Community />} />
           <Route path="/donations" element={<Donations />} />
+          <Route path="/create-donation" element={
+            <ProtectedRoute><CreateDonation /></ProtectedRoute>
+          } />
           <Route path="/lost-and-found" element={<LostAndFound />} />
           <Route path="/report-lost-item" element={
             <ProtectedRoute><ReportLostItem /></ProtectedRoute>
@@ -233,6 +238,9 @@ export default function App() {
           } />
           <Route path="/admin/content" element={
             <AdminRoute><AdminContentManagement /></AdminRoute>
+          } />
+          <Route path="/admin/donations" element={
+            <AdminRoute><AdminDonationsManagement /></AdminRoute>
           } />
           <Route path="/admin/promotions" element={
             <AdminRoute><AdminPromotions /></AdminRoute>

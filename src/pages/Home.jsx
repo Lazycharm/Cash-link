@@ -607,6 +607,72 @@ export default function Home() {
         </section>
       )}
 
+      {/* Upcoming Events */}
+      {data.events.length > 0 && (
+        <section>
+          <SectionHeader title="Upcoming Events" actionLink={createPageUrl("Events")} actionText="View All Events" />
+          <div className="flex gap-6 overflow-x-auto pb-8 -mx-4 px-4 md:mx-0 md:px-0 hide-scrollbar snap-x">
+            {data.events.map(event => (
+              <Link key={event.id} to={createPageUrl(`EventDetail?id=${event.id}`)} className="block min-w-[260px] md:min-w-[300px] snap-start group">
+                <motion.div 
+                  whileHover={{ y: -6 }}
+                  className="bg-white rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col"
+                >
+                  <div className="h-40 bg-gray-100 relative overflow-hidden">
+                    <img 
+                      src={event.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80'} 
+                      alt={event.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
+                    {event.category && (
+                      <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide text-gray-900 shadow-sm border border-gray-100">
+                        {event.category}
+                      </span>
+                    )}
+                    {event.is_featured && (
+                      <span className="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1 shadow-lg">
+                        <BadgeCheck className="w-3 h-3" /> Featured
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow space-y-3">
+                    <div>
+                      <h3 className="font-bold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors mb-2">{event.title}</h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">{event.description}</p>
+                    </div>
+                    <div className="space-y-2 mt-auto">
+                      <div className="flex items-center gap-2 text-xs text-gray-500">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                        <span>{format(new Date(event.start_datetime), 'MMM d, yyyy')}</span>
+                        <span className="text-gray-300">•</span>
+                        <span>{format(new Date(event.start_datetime), 'h:mm a')}</span>
+                      </div>
+                      {event.location && (
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{event.location?.address || event.location?.city || 'UAE'}</span>
+                        </div>
+                      )}
+                      {event.is_free === false && event.ticket_price && (
+                        <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+                          <DollarSign className="w-4 h-4 text-green-600" />
+                          AED {event.ticket_price}
+                        </div>
+                      )}
+                      {event.is_free && (
+                        <Badge className="bg-green-100 text-green-700 text-[10px] w-fit">Free Event</Badge>
+                      )}
+                    </div>
+                    <Button variant="outline" className="w-full h-9 text-sm mt-2">View Details</Button>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Fresh Finds */}
       {data.items.length > 0 && (
         <section>
@@ -625,25 +691,6 @@ export default function Home() {
              ))}
           </div>
         </section>
-      )}
-
-      {/* Upcoming Events */}
-      {data.events.length > 0 && (
-          <section>
-            <SectionHeader title="Upcoming Events" actionLink={createPageUrl("Events")} />
-            <div className="flex gap-6 overflow-x-auto pb-8 -mx-4 px-4 md:mx-0 md:px-0 hide-scrollbar snap-x">
-                {data.events.map(e => (
-                    <FeatureCard
-                        key={e.id}
-                        title={e.title}
-                        subtitle={format(new Date(e.start_datetime), 'MMM d, h:mm a')}
-                        image={e.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80'}
-                        badge={e.category}
-                        link={createPageUrl(`EventDetail?id=${e.id}`)}
-                    />
-                ))}
-            </div>
-          </section>
       )}
 
       {/* Newsletter / CTA */}
